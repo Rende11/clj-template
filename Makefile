@@ -4,6 +4,9 @@ server:
 test:
 		clojure -A:test
 
+coverage:
+		clojure -A:test-coverage
+
 format:
 		clojure -A:format
 
@@ -16,7 +19,7 @@ lint:
 check:
 		make format
 		make lint
-		make test
+		make test-coverage
 
 
 .PHONY: server test

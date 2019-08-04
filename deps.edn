@@ -14,13 +14,21 @@
                                "[cider.nrepl/cider-middleware]"]}
 
 
-           :test {:extra-deps {ring/ring-mock                {:mvn/version "0.4.0"}
-                               lambdaisland/kaocha           {:mvn/version "0.0-529"}
-                               lambdaisland/kaocha-cloverage {:mvn/version "0.0-32"}
-                               healthsamurai/matcho          {:mvn/version "0.3.3"}}
+           :test {:extra-deps {ring/ring-mock       {:mvn/version "0.4.0"}
+                               lambdaisland/kaocha  {:mvn/version "0.0-529"}
+                               healthsamurai/matcho {:mvn/version "0.3.3"}}
 
                   :main-opts ["-m" "kaocha.runner" "unit"
                               "--reporter kaocha.report/documentation"]}
+
+           :test-coverage {:extra-deps {ring/ring-mock                {:mvn/version "0.4.0"}
+                                        lambdaisland/kaocha           {:mvn/version "0.0-529"}
+                                        lambdaisland/kaocha-cloverage {:mvn/version "0.0-32"}
+                                        healthsamurai/matcho          {:mvn/version "0.3.3"}}
+
+                           :main-opts ["-m" "kaocha.runner" "unit"
+                                       "--reporter kaocha.report/documentation"
+                                       "--plugin cloverage --codecov"]}
 
 
            :format {:extra-deps {com.jameslaverack/cljfmt-runner
@@ -37,6 +45,4 @@
                         :main-opts ["-m" "cljfmt-runner.fix"]}
 
            :eastwood {:main-opts  ["-m" "eastwood.lint" {:source-paths ["src"]}]
-                      :extra-deps {jonase/eastwood {:mvn/version "RELEASE"}}
-
-                      }}}
+                      :extra-deps {jonase/eastwood {:mvn/version "RELEASE"}}}}}
