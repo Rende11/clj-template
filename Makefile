@@ -11,7 +11,7 @@ fix-format:
 		clojure -A:format/fix
 
 lint:
-		clj -A:eastwood
+		clojure -A:eastwood
 
 check:
 		make format
