@@ -1,7 +1,7 @@
 (ns clj-template.middlewares
   (:require [route-map.core :as router]
             [clojure.string :as string]
-            [clj-template.views.layout :as layout]
+            [clj-template.pages.layout :as layout]
             [clj-template.routes :as routes]))
 
 

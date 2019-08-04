@@ -1,4 +1,4 @@
-(ns clj-template.views.layout
+(ns clj-template.pages.layout
   (:require [clojure.string :as string])
   (:use [hiccup.page :only (html5 include-css include-js)]))
 
