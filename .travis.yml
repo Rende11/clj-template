@@ -12,3 +12,5 @@ install:
 script:
   - make check
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -f target/coverage/codecov.json
