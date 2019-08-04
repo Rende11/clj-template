@@ -19,7 +19,7 @@ lint:
 check:
 		make format
 		make lint
-		make test-coverage
+		make coverage
 
 
 .PHONY: server test
