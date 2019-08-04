@@ -3,9 +3,18 @@
         hiccup              {:mvn/version "1.0.5"}
         route-map           {:mvn/version "0.0.7-RC4"}}
 
- :paths ["src"]
+ :paths ["src" "test"]
 
- :aliases {:nrepl {:extra-deps {nrepl             {:mvn/version "RELEASE"}
+ :aliases {:nrepl {:extra-deps {nrepl                {:mvn/version "RELEASE"}
+                                healthsamurai/matcho {:mvn/version "0.3.3"}
+                                ring/ring-mock    {:mvn/version "0.4.0"}
                                 cider/cider-nrepl {:mvn/version "0.22.0-beta9"}}
-                   :main-opts  ["-m" "nrepl.cmdline" "--middleware"
-                                "[cider.nrepl/cider-middleware]"]}}}
+
+                   :main-opts ["-m" "nrepl.cmdline" "--middleware"
+                               "[cider.nrepl/cider-middleware]"]}
+
+
+           :test {:extra-deps  {ring/ring-mock       {:mvn/version "0.4.0"}
+                                healthsamurai/matcho {:mvn/version "0.3.3"}}
+
+                  :extra-paths ["test"]}}}

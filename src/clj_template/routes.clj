@@ -1,7 +1,7 @@
 (ns clj-template.routes
-  (:require [clj-template.routes.index :refer [index]]
-            [clj-template.routes.features :refer [features]]
-            [clj-template.routes.layout :refer [application]]))
+  (:require [clj-template.pages.index :refer [index]]
+            [clj-template.pages.features :refer [features]]
+            [clj-template.pages.layout :refer [application]]))
 
 (def routes
   {:GET       #'index
