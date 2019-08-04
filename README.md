@@ -20,11 +20,15 @@
 * dockerize
 * heroku deploy
 
-## Launch example
-* run interactive REPL ```make server```
+## Launch example fore develop
+* run interactive REPL ```make repl```
 * connect to them from your editor (spacemacs - my choise)
-* open ```clj-template.core``` and eval namespace and ```run-server``` function
+* open ```clj-template.core``` and eval namespace and ```-main``` function
 * now application available on http://localhost:8080
 
+### Just launch app
+* run server ```make run```
+* now application available on http://localhost:8080
+* your are awesome
 
 

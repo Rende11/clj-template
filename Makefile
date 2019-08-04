@@ -1,8 +1,11 @@
-server:
+repl:
 		clojure -A:nrepl -i
 
 test:
 		clojure -A:test
+
+run:
+		clojure -A:server
 
 coverage:
 		clojure -A:test-coverage
