@@ -2,6 +2,8 @@
 ---
 [![Build Status](https://travis-ci.org/Rende11/clj-template.svg?branch=master)](https://travis-ci.org/Rende11/clj-template)
 
+[![codecov](https://codecov.io/gh/Rende11/clj-template/branch/master/graph/badge.svg)](https://codecov.io/gh/Rende11/clj-template)
+
 ## Basics
 * managing dependencies with ```deps.edn```
 * ```http-kit``` web server
@@ -9,11 +11,12 @@
 * simple ```route-map``` routing
 * ```kaocha``` tests
 * linter ```eastwood``` and code-style checker ```cljfmt```
+* CI ```travis-ci```
+* test coverage with ```cloverage``` and ```codecov```
 
 ## Future plans
 * forking with db (entities, migrations, connections)
 * environment variables
-* code coverage
 * dockerize
 * heroku deploy
 
