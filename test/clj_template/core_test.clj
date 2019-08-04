@@ -1,4 +1,4 @@
-(ns clj-template.test.core-test
+(ns clj-template.core-test
   (:require
    [clojure.test :refer :all]
    [matcho.core :as matcho]

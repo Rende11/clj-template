@@ -1,5 +1,4 @@
-(ns clj-template.pages.index
-  (:use [hiccup.core]))
+(ns clj-template.pages.index)
 
 (defn index [req]
   [:div

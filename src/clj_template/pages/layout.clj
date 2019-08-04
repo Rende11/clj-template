@@ -18,7 +18,6 @@
          [:li.nav-item [:a.nav-link {:href  link
                                      :class (string/join "." css-classes)} title]])]]]))
 
-
 (defn application [content params]
   (html5
    [:head

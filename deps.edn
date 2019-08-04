@@ -7,14 +7,35 @@
 
  :aliases {:nrepl {:extra-deps {nrepl                {:mvn/version "RELEASE"}
                                 healthsamurai/matcho {:mvn/version "0.3.3"}
-                                ring/ring-mock    {:mvn/version "0.4.0"}
-                                cider/cider-nrepl {:mvn/version "0.22.0-beta9"}}
+                                ring/ring-mock       {:mvn/version "0.4.0"}
+                                cider/cider-nrepl    {:mvn/version "0.22.0-beta9"}}
 
                    :main-opts ["-m" "nrepl.cmdline" "--middleware"
                                "[cider.nrepl/cider-middleware]"]}
 
 
-           :test {:extra-deps  {ring/ring-mock       {:mvn/version "0.4.0"}
-                                healthsamurai/matcho {:mvn/version "0.3.3"}}
+           :test {:extra-deps {ring/ring-mock       {:mvn/version "0.4.0"}
+                               lambdaisland/kaocha  {:mvn/version "0.0-529"}
+                               healthsamurai/matcho {:mvn/version "0.3.3"}}
 
-                  :extra-paths ["test"]}}}
+                  :main-opts ["-m" "kaocha.runner" "unit"
+                              "--reporter kaocha.report/documentation"]}
+
+
+           :format {:extra-deps {com.jameslaverack/cljfmt-runner
+                                 {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                                  :sha     "51f85c9d6cc67107620749ceacd46120647fe107"}}
+
+                    :main-opts ["-m" "cljfmt-runner.check"]}
+
+
+           :format/fix {:extra-deps {com.jameslaverack/cljfmt-runner
+                                     {:git/url "https://github.com/JamesLaverack/cljfmt-runner"
+                                      :sha     "51f85c9d6cc67107620749ceacd46120647fe107"}}
+
+                        :main-opts ["-m" "cljfmt-runner.fix"]}
+
+           :eastwood {:main-opts ["-m" "eastwood.lint" {:source-paths ["src"]}]
+                      :extra-deps {jonase/eastwood {:mvn/version "RELEASE"}}
+
+           }}}

@@ -1,6 +1,4 @@
-(ns clj-template.pages.features
-  (:use [hiccup.core]))
-
+(ns clj-template.pages.features)
 
 (defn features [req]
   [:div
