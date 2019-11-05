@@ -1,3 +1,7 @@
+.EXPORT_ALL_VARIABLES:
+
+include .env
+
 repl:
 		clojure -A:test:nrepl -i
 

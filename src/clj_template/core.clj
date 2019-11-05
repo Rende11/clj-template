@@ -2,7 +2,16 @@
   (:gen-class)
   (:require
    [clj-template.middlewares :as mw]
+   [clojure.string :as string]
    [org.httpkit.server :as http]))
+
+(defn get-env [value]
+  (-> value
+      name
+      string/upper-case
+      (string/replace "-" "_")
+      System/getenv))
+
 
 (defn app [req]
   (-> req
@@ -17,8 +26,9 @@
     (reset! server nil)))
 
 (defn -main [& args]
-  (reset! server (http/run-server #'app {:port 8080}))
-  (println "Server launched at port 8080"))
+  (let [port (Integer/parseInt (get-env :port))]
+    (reset! server (http/run-server #'app {:port port}))
+    (println (str "Server launched at port " port))))
 
 (comment
   (-main)
